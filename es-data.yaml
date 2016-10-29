@@ -19,7 +19,7 @@ spec:
           capabilities:
             add:
               - IPC_LOCK
-        image: quay.io/pires/docker-elasticsearch-kubernetes:2.3.4
+        image: quay.io/pires/docker-elasticsearch-kubernetes:2.4.1
         imagePullPolicy: Always
         env:
         - name: NAMESPACE
@@ -32,6 +32,8 @@ spec:
           value: "false"
         - name: HTTP_ENABLE
           value: "false"
+        - name: ES_HEAP_SIZE
+          value: "256m"
         ports:
         - containerPort: 9300
           name: transport
